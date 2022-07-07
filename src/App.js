@@ -29,8 +29,8 @@ const App = () => {
             <Nav />
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/:countryParam" element={<Country />} />
+                    <Route path="/where-in-the-world/" element={<Home />} />
+                    <Route path="/where-in-the-world/:countryParam" element={<Country />} />
                 </Routes>
             </BrowserRouter>
             <Footer />
