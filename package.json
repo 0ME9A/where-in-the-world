@@ -2,6 +2,7 @@
   "name": "where-in-the-world",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://0me9a.github.io/where-in-the-world",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
