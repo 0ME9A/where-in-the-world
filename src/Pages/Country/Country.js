@@ -64,7 +64,7 @@ const Country = () => {
         return (
             <div className='main-container' id='country'>
                 <div className='histroy-btn'>
-                    <button><BsArrowLeft className='icon' onClick={() => { navigate('/') }} /> Back</button>
+                    <button><BsArrowLeft className='icon' onClick={() => { navigate('/where-in-the-world/') }} /> Back</button>
                 </div>
                 <article className='country-container'>
                     <figure className='country-flag'>
@@ -95,7 +95,7 @@ const Country = () => {
                                             const element = CountriesWidthCode[i];
                                             if (theKey === element.alpha_3) {
                                                 return (
-                                                    <Link to={'/' + element.name} className='tag' key={Math.random() * 5000}>{element.name}</Link>
+                                                    <Link to={'/where-in-the-world/' + element.name} className='tag' key={Math.random() * 5000}>{element.name}</Link>
                                                 )
                                             }
                                         }

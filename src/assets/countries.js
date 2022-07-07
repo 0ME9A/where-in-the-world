@@ -131,7 +131,7 @@ const CountriesWidthCode =[
     {"alpha_3":"LTU","name":"Lithuania"},
     {"alpha_3":"LUX","name":"Luxembourg"},
     {"alpha_3":"MAC","name":"Macao"},
-    {"alpha_3":"MKD","name":"Macedonia"},
+    {"alpha_3":"MKD","name":"North Macedonia"},
     {"alpha_3":"MDG","name":"Madagascar"},
     {"alpha_3":"MWI","name":"Malawi"},
     {"alpha_3":"MYS","name":"Malaysia"},

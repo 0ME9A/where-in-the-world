@@ -74,7 +74,7 @@ const Home = () => {
                     {
                         coun.map((cList) => {
                             return (
-                                <Link to={'/' + cList.name.common} key={Math.random() * 50000}>
+                                <Link to={'/where-in-the-world/' + cList.name.common} key={Math.random() * 50000}>
                                     <Cards cName={cList.name.common} cImg={cList.flags.png} cRegion={cList.region} cCapital={cList.capital} cPopulation={cList.population} />
                                 </Link>
                             )
