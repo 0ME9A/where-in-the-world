@@ -1,0 +1,34 @@
+$Very-Light-Gray:#fafafa
+$Dark-Gray:#858585
+$White:#ffffff
+$Very-Dark-Blue:#202c37
+$Dark-Blue:#2b3945
+$Very-Dark-Blue-text:#111517
+
+@mixin shadow()
+    box-shadow: 0 0 15px rgba(0, 0, 0, .15)
+    
+@mixin common()
+    @include shadow()
+    border-radius: 5px
+    &:hover
+        box-shadow: 0 0 15px rgba(0, 0, 0, .25)
+        
+@mixin flex($j, $a, $f:row)
+    display: flex
+    justify-content: $j
+    align-items: $a
+    flex-direction: $f
+
+@mixin element($width:auto, $height:auto, $background:transparent ,$padding:0 )
+    width: $width
+    height: $height
+    padding: $padding
+    background: $background
+
+
+@mixin htmlTag($font-size:1rem, $font-weight:300, $padding:0, $color:black)
+    font-size: $font-size
+    padding: $padding
+    color: $color
+    font-weight: $font-weight

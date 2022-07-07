@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from "./components/nav/Nav"
+import './style.sass'
+import Home from "./Pages/HomePage/Home"
+import Country from "./Pages/Country/Country"
+import Footer from "./components/footer/Footer"
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import { useEffect, useState } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+    const [lite, setLite] = useState('')
+    const checkCookie=()=>{
+        if (document.cookie.includes('dark')) {
+            setLite('dark')
+            // document.getElementById("root").classList = lite
+        } else {
+            setLite('')
+        }
+    }
+    document.getElementById("root").classList = lite
+    useEffect(()=>{
+        setInterval(() => {
+            checkCookie()
+        }, 1000);
+    },[])
+    
+    return (
+        <div>
+            <Nav />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/:countryParam" element={<Country />} />
+                </Routes>
+            </BrowserRouter>
+            <Footer />
+        </div>
+    )
 }
 
-export default App;
+export default App

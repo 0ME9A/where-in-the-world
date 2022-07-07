@@ -1,0 +1,53 @@
+@import './variable'
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-size: 16px
+    font-family: 'Nunito Sans', sans-serif
+    list-style: none
+    text-decoration: none
+    transition: .3s
+
+a
+    text-decoration: none
+    color: $White
+
+#root
+    background: $Very-Dark-Blue
+    min-height: 100vh
+
+.main-container
+    max-width: 1440px
+    margin: 0 auto
+    padding: 0 80px
+
+@media screen and (max-width: 1200px)
+    .main-container
+        padding: 0 5%
+
+button
+    border-color: transparent
+    &:focus
+        border-color: $White
+        border-style: solid
+
+.dark
+    background: $White !important
+    nav,.main-container, input, label, .icon, button, .tag, .card-box, h3, ul, li, .moon
+        background: $White !important
+        fill: $Very-Dark-Blue-text
+        color: $Very-Dark-Blue-text !important
+    input
+        background: transparent !important
+        &:focus
+            background: $White !important
+    li, h3, h4, h1, .card-text
+        color: $Very-Dark-Blue-text
+    li
+        &:hover
+            background: $Very-Light-Gray !important
+
+    .card-text-info ,
+    .country-info-value
+        color: $Dark-Gray !important
