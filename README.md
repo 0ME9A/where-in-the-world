@@ -69,3 +69,4 @@ Users should be able to:
 - Frontend Mentor [@ome9a](https://www.frontendmentor.io/profile/0me9a)
 - Figma [@omega1](https://www.figma.com/@omega1)
 - Hacker Rank [@ome9a](https://www.hackerrank.com/ome9a)
+
