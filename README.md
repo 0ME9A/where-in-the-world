@@ -1,6 +1,12 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# watchFace
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/where-in-the-world-o1I8jbkJhj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+Customizable clock wallpaper for desktop. Personalize your desktop with watchFace using lively wallpaper.
+
+To use this customizable clock download LIVELY software first [Here](https://rocksdanister.github.io/lively/)
+
+## Downloads
+- **[Lively](https://rocksdanister.github.io/lively/)**
+- **[watchFace](https://github.com/0ME9A/watchFace/releases/download/desktop-wallpaper/watchFace.zip)**
 
 ## Table of contents
 
@@ -12,6 +18,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
+- [Weather setup](#weather)
 - [Author](#author)
 
 ## Overview
@@ -20,24 +27,22 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 Users should be able to:
 
-- See all countries from the API on the homepage
-- Search for a country using an `input` field
-- Filter countries by region
-- Click on a country to see more detailed information on a separate page
-- Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode
+- Active clock synced with you desktop.
+- Customizable text, color, clock nibs
+- Show date, time, and weather
+- Resizable text
+- User able to show & hide elements
 
 ### Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/0ME9A/screenshots/main/where-in-the-world.png)
+![Screenshot](https://raw.githubusercontent.com/0ME9A/screenshots/main/watchFace.png)
 
 
 
 ### Links
 
-- [Solution URL: ](https://github.com/0ME9A/where-in-the-world)
-- [Live Site URL:](https://0me9a.github.io/where-in-the-world/)
-- [Figma design](https://www.figma.com/community/file/1125344326407950094)
+- [Solution URL: ](https://github.com/0ME9A/watchFace/)
+- [Live Site URL:](https://0me9a.github.io/watchFace/)
 
 ## My process
 
@@ -45,18 +50,24 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - Flexbox
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Sass](https://sass-lang.com/) - For styles
+- Lively first
+- [JQuery](https://jquery.com) - JS library
 
 ### What I learned
-- Rest API
-- React Js
+- API [Open weather](https://openweathermap.org/)
+- Javascript library [JQuery](https://jquery.com/)
 
 
 ### Useful resources
 
 - [Figma](https://figma.com/) This helped me for designing and predicting the code. I really liked this pattern and will use it going forward.
+
+## Weather setup
+- Create an account in open weather [Here](https://openweathermap.org/)
+- Generate an api key
+- Enter the key & city after opening Customise menu in Lively
+- Hit Refresh, api key might take some time to activate so if you get error try after sometime
+- Done!
 
 ## Author
 
