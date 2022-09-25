@@ -1,6 +1,6 @@
-# Frontend Mentor - Advice generator app solution
+# Frontend Mentor - REST Countries API with color theme switcher solution
 
-This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/where-in-the-world-o1I8jbkJhj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -13,8 +13,6 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Favorite Spot](#favorite-spot)
-
 
 ## Overview
 
@@ -22,20 +20,24 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Generate a new piece of advice by clicking the dice icon
+- See all countries from the API on the homepage
+- Search for a country using an `input` field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode
 
 ### Screenshot
 
-![](https://raw.githubusercontent.com/0ME9A/screenshots/main/advice-generator.png)
+![Screenshot](https://raw.githubusercontent.com/0ME9A/screenshots/main/where-in-the-world.png)
 
 
 
 ### Links
 
-- Solution URL: [View](https://github.com/0ME9A/advice-generator)
-- Live Site URL: [Go Live](https://0me9a.github.io/advice-generator/)
+- [Solution URL: ](https://github.com/0ME9A/where-in-the-world)
+- [Live Site URL:](https://0me9a.github.io/where-in-the-world/)
+- [Figma design](https://www.figma.com/community/file/1125344326407950094)
 
 ## My process
 
@@ -45,28 +47,19 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Sass](https://sass-lang.com/) (stylesheet language)
-- Axios
+- [Sass](https://sass-lang.com/) - For styles
 
 ### What I learned
 - Rest API
-- React JS
-- My Apis and Logical skills becoming more and more stronger.
-
+- React Js
 
 
 ### Useful resources
 
-- [Google fonts](https://fonts.google.com/) - This helped me for custome font.
+- [Figma](https://figma.com/) This helped me for designing and predicting the code. I really liked this pattern and will use it going forward.
 
 ## Author
 
-- Website - [OMEGA](https://www.ome9a.com)
-- Frontend Mentor - [@0ME9A](https://www.frontendmentor.io/profile/0me9a)
-
-## Favorite Spot
-- Github [@OMEGA](https://www.github.com/0me9a)
-- Frontend Mentor [@ome9a](https://www.frontendmentor.io/profile/0me9a)
-- Figma [@omega1](https://www.figma.com/@omega1)
-- Hacker Rank [@ome9a](https://www.hackerrank.com/ome9a)
-
+- Website - [OMEGA](https://ome9a.com)
+- Frontend Mentor - [@0me9a](https://www.frontendmentor.io/profile/0me9a)
+- Twitter - [@omega86735940](https://twitter.com/omega86735940)
