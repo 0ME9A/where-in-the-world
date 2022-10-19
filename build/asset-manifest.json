@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/where-in-the-world/static/css/main.7c1c0ef2.css",
+    "main.js": "/where-in-the-world/static/js/main.2d90b545.js",
+    "index.html": "/where-in-the-world/index.html",
+    "main.7c1c0ef2.css.map": "/where-in-the-world/static/css/main.7c1c0ef2.css.map",
+    "main.2d90b545.js.map": "/where-in-the-world/static/js/main.2d90b545.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c1c0ef2.css",
+    "static/js/main.2d90b545.js"
+  ]
+}

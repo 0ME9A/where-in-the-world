@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import CountriesWidthCode from '../../assets/countries'
 import { useNavigate } from "react-router-dom";
+import Loading from '../../components/loading/Loading'
 
 const Country = () => {
     const { countryParam } = useParams('')
@@ -64,11 +65,11 @@ const Country = () => {
         return (
             <div className='main-container' id='country'>
                 <div className='histroy-btn'>
-                    <button><BsArrowLeft className='icon' onClick={() => { navigate('/where-in-the-world/') }} /> Back</button>
+                    <button onClick={() => { navigate('/') }}><BsArrowLeft className='icon' /> Back</button>
                 </div>
                 <article className='country-container'>
                     <figure className='country-flag'>
-                        <img src={countryDetail[0].flags.png} alt="Country Flag"/>
+                        <img src={countryDetail[0].flags.png} alt="Country Flag" />
                     </figure>
                     <div className='country-info'>
                         <h3>{countryDetail[0].name.common}</h3>
@@ -89,24 +90,21 @@ const Country = () => {
                             <h4>Border Countries:</h4>
                             <div className='tags-container'>
                                 {
-
                                     cBorders.map((theKey) => {
                                         for (let i = 0; i < CountriesWidthCode.length; i++) {
                                             const element = CountriesWidthCode[i];
                                             if (theKey === element.alpha_3) {
                                                 return (
-                                                    <Link to={'/where-in-the-world/' + element.name} className='tag' key={Math.random() * 5000}>{element.name}</Link>
+                                                    <Link to={'/country/' + element.name} className='tag' key={Math.random() * 5000}>{element.name}</Link>
                                                 )
                                             }
                                         }
-                                        if (theKey == '') {
+                                        if (theKey === '') {
                                             return (
                                                 <span className='tag' key={Math.random() * 5000}>No Border</span>
                                             )
-
                                         }
                                     })
-
                                 }
                             </div>
                         </div>
@@ -115,7 +113,9 @@ const Country = () => {
             </div>
         )
     } else {
-
+        return (
+            <Loading />
+        )
     }
 
 }

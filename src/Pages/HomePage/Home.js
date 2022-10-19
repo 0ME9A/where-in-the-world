@@ -4,6 +4,7 @@ import { GoSearch } from 'react-icons/go'
 import { IoIosArrowDown } from 'react-icons/io'
 import { useEffect, useState, useTransition } from "react"
 import { Link } from "react-router-dom"
+import Loading from "../../components/loading/Loading"
 
 
 const Home = () => {
@@ -37,9 +38,11 @@ const Home = () => {
     }
     const chese = (e) => {
         setSearch(e.target.value)
-        startTransition(() => {
-            getCountry(e.target.value)
-        })
+        setTimeout(() => {
+            startTransition(() => {
+                getCountry(e.target.value)
+            })
+        }, 1000);
     }
     const filterByRegion = (region = '') => {
         setFilter(region)
@@ -54,10 +57,10 @@ const Home = () => {
         return (
             <div className="main-container">
                 <div className="filter-container">
-                    <div className="form">
-                        <input type='text' value={search} onChange={chese} id="Country" name="Country" placeholder="" />
+                    <form className="form">
+                        <input type='text' value={search} onChange={chese} name="Country" />
                         <label><GoSearch className="icon" />Search...</label>
-                    </div>
+                    </form>
 
                     <div className="select">
                         <h3><span>{filter}</span><IoIosArrowDown /></h3>
@@ -74,11 +77,10 @@ const Home = () => {
                     {
                         coun.map((cList) => {
                             return (
-                                <Link to={'/where-in-the-world/' + cList.name.common} key={Math.random() * 50000}>
+                                <Link to={'/country/' + cList.name.common} target="_top" key={Math.random() * 50000}>
                                     <Cards cName={cList.name.common} cImg={cList.flags.png} cRegion={cList.region} cCapital={cList.capital} cPopulation={cList.population} />
                                 </Link>
                             )
-
                         })
                     }
                 </div>
@@ -89,10 +91,10 @@ const Home = () => {
         return (
             <div className="main-container">
                 <div className="filter-container">
-                    <div className="form">
+                    <form className="form">
                         <input type='text' value={search} onChange={chese} name="Country" />
                         <label><GoSearch className="icon" />Search...</label>
-                    </div>
+                    </form>
 
                     <div className="select">
                         <h3><span>{filter}</span><IoIosArrowDown /></h3>
@@ -106,7 +108,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="cards-container">
-                    <h1>Loading...</h1>
+                    <Loading />
                 </div>
             </div>
         )
