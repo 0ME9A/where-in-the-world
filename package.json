@@ -1,7 +1,7 @@
 {
   "name": "where-in-the-world",
   "version": "0.2.0",
-  "homepage": "https://0me9a.github.io/where-in-the-world/",
+  "homepage": "https://where-in-theworld.netlify.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
