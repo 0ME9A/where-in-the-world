@@ -1,0 +1,45 @@
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+footer p {
+  font-weight: 400;
+}
+footer p span {
+  color: red;
+  display: inline-block;
+  transform: scale(0);
+  -webkit-animation: heart 1.2s infinite linear;
+          animation: heart 1.2s infinite linear;
+}
+footer p a {
+  color: #858585;
+}
+@-webkit-keyframes heart {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+@keyframes heart {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}/*# sourceMappingURL=Footer.css.map */

@@ -1,0 +1,150 @@
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 76px 73px;
+  padding-bottom: 3rem;
+}
+
+.filter-container {
+  width: 100%;
+  height: auto;
+  padding: 49px 0px 47px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  position: relative;
+}
+.filter-container .hint {
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background: #2b3945;
+}
+.filter-container .hint:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.filter-container .form {
+  position: relative;
+}
+.filter-container .form input {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  width: 480px;
+  height: 56px;
+  padding: 0 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  border: none;
+  outline: none;
+  color: #858585;
+}
+.filter-container .form input:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.filter-container .form input:focus {
+  background: #2b3945;
+}
+.filter-container .form label {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  width: 480px;
+  height: 56px;
+  padding: 0 30px;
+  background: #2b3945;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffffff;
+  line-height: 1rem;
+  font-weight: 600;
+}
+.filter-container .form label:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.filter-container .form label .icon {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: transparent;
+  margin-right: 24px;
+  font-weight: 600;
+}
+.filter-container .select {
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  background: transparent;
+  color: #ffffff;
+  cursor: context-menu;
+}
+.filter-container .select h3 {
+  width: auto;
+  height: 60px;
+  padding: 0 20px 0px 24px;
+  background: #2b3945;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+.filter-container .select h3:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.filter-container .select ul {
+  opacity: 0;
+  margin-top: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background: #2b3945;
+  padding: 0.5rem 0px 0.5rem;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.filter-container .select ul:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.filter-container .select ul li {
+  cursor: pointer;
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.filter-container .select:hover ul {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+@media screen and (max-width: 800px) {
+  .filter-container {
+    flex-direction: column;
+    gap: 50px;
+    padding: 30px 0 70px;
+  }
+  .filter-container .form input, .filter-container .form label {
+    width: 100%;
+  }
+  .cards-container {
+    gap: 76px 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+  input, label {
+    width: 100% !important;
+  }
+}/*# sourceMappingURL=Home.css.map */

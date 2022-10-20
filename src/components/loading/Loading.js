@@ -12,11 +12,14 @@ function Loading(props) {
     },[])
 
     return (
-        <div className='loading'>
+        <>
+        <section className='loading' role="progressbar">
             <h2>
                 {home}
             </h2>
-        </div>
+        </section>
+        <hr />
+        </>
     );
 }
 

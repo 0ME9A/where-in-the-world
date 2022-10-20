@@ -35,6 +35,7 @@ const Home = () => {
         else {
             setApiStatus(404)
         }
+        console.log("getcont")
     }
     const chese = (e) => {
         setSearch(e.target.value)
@@ -43,37 +44,60 @@ const Home = () => {
                 getCountry(e.target.value)
             })
         }, 1000);
+        console.log("chese")
     }
     const filterByRegion = (region = '') => {
         setFilter(region)
         getCountry('', region)
+        console.log('filtbyr')
     }
     useEffect(() => {
         getCountry()
+        console.log('eff')
     }, [])
 
 
     if (apiStatus === 200) {
         return (
-            <div className="main-container">
-                <div className="filter-container">
-                    <form className="form">
-                        <input type='text' value={search} onChange={chese} name="Country" />
-                        <label><GoSearch className="icon" />Search...</label>
-                    </form>
+            <section className="main-container">
+                <section className="filter-container" role="toolbar">
+                    <section className="form">
+                        <input type='text' value={search} onChange={chese} name="Country" id="search-input" />
+                        <label htmlFor="search-input"><GoSearch className="icon" />Search...</label>
+                    </section>
 
-                    <div className="select">
-                        <h3><span>{filter}</span><IoIosArrowDown /></h3>
+                    <section className="select">
+                        <h3>{filter}<IoIosArrowDown /></h3>
                         <ul>
-                            <li onClick={() => { filterByRegion('Africa') }}><span>Africa</span></li>
-                            <li onClick={() => { filterByRegion('America') }}><span>America</span></li>
-                            <li onClick={() => { filterByRegion('Asia') }}><span>Asia</span></li>
-                            <li onClick={() => { filterByRegion('Europe') }}><span>Europe</span></li>
-                            <li onClick={() => { filterByRegion('Oceania') }}><span>Oceania</span></li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Africa') }}>
+                                Africa
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('America') }}>
+                                America
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Asia') }}>
+                                Asia
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Europe') }}>
+                                Europe
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Oceania') }}>
+                                Oceania
+                            </li>
                         </ul>
-                    </div>
-                </div>
-                <div className="cards-container">
+                    </section>
+                </section>
+                <main className="cards-container">
                     {
                         coun.map((cList) => {
                             return (
@@ -83,34 +107,54 @@ const Home = () => {
                             )
                         })
                     }
-                </div>
-            </div>
+                </main>
+            </section>
         )
     }
     else {
         return (
-            <div className="main-container">
-                <div className="filter-container">
-                    <form className="form">
-                        <input type='text' value={search} onChange={chese} name="Country" />
-                        <label><GoSearch className="icon" />Search...</label>
-                    </form>
+            <section className="main-container">
+                <section className="filter-container" role="toolbar">
+                    <section className="form">
+                        <input type='text' value={search} onChange={chese} name="Country" id="search-input" />
+                        <label htmlFor="search-input"><GoSearch className="icon" />Search...</label>
+                    </section>
 
-                    <div className="select">
-                        <h3><span>{filter}</span><IoIosArrowDown /></h3>
+                    <section className="select">
+                        <h3>{filter}<IoIosArrowDown /></h3>
                         <ul>
-                            <li onClick={() => { filterByRegion('Africa') }}><span>Africa</span></li>
-                            <li onClick={() => { filterByRegion('America') }}><span>America</span></li>
-                            <li onClick={() => { filterByRegion('Asia') }}><span>Asia</span></li>
-                            <li onClick={() => { filterByRegion('Europe') }}><span>Europe</span></li>
-                            <li onClick={() => { filterByRegion('Oceania') }}><span>Oceania</span></li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Africa') }}>
+                                Africa
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('America') }}>
+                                America
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Asia') }}>
+                                Asia
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Europe') }}>
+                                Europe
+                            </li>
+                            <li
+                                role="button"
+                                onClick={() => { filterByRegion('Oceania') }}>
+                                Oceania
+                            </li>
                         </ul>
-                    </div>
-                </div>
-                <div className="cards-container">
-                    <Loading />
-                </div>
-            </div>
+                    </section>
+                </section>
+                <section className="cards-container">
+                    <Loading/>
+                </section>
+            </section>
         )
 
     }

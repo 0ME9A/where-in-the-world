@@ -32,19 +32,32 @@ button
         border-color: $White
         border-style: solid
 
+hr
+    visibility: hidden
+
+li
+    &:hover
+        background: $Very-Dark-Blue
+
 .dark
     background: $White !important
-    nav,.main-container, input, label, .icon, button, .tag, .card-box, h3, ul, li, .moon
+    .moon
+        fill: $Very-Dark-Blue-text !important
+    .select
+        h3
+            background: $White !important
+
+    header,.main-container, input, label, .icon, button, .tag, .card-box, h2, ul
         background: $White !important
-        fill: $Very-Dark-Blue-text
         color: $Very-Dark-Blue-text !important
     input
         background: transparent !important
         &:focus
             background: $White !important
-    li, h3, h4, h1, .card-text
-        color: $Very-Dark-Blue-text
+    h3, h4, h1, p
+        color: $Very-Dark-Blue-text !important
     li
+        color: black !important
         &:hover
             background: $Very-Light-Gray !important
 

@@ -34,10 +34,11 @@
             top: 0
             color: $White
             line-height: 1rem
+            font-weight: 600
             .icon
                 @include element(20px, 20px)
                 margin-right: 24px
-                font-weight: bolder
+                font-weight: 600
     .select
         @include element(200px, 60px)
         color: $White
@@ -45,7 +46,7 @@
         h3
             @include element(auto, 60px, $Dark-Blue,0 20px 0px 24px)
             @include flex(space-between, center )
-            font-weight: 300
+            font-weight: 600
             @include common()
 
         ul
@@ -53,16 +54,14 @@
             margin-top: 5px
             @include common()
             background: $Dark-Blue
-            padding: 18px 0px 2rem
+            padding: .5rem 0px .5rem
             transform: scaleY(0)
             transform-origin: top
             li
                 cursor: pointer
                 padding: 8px 24px
                 font-size: 14px
-
-                &:hover
-                    background: $Very-Dark-Blue
+                font-weight: 600
         &:hover
             ul
                 opacity: 1
@@ -72,7 +71,7 @@
         flex-direction: column
         gap: 50px
         padding: 30px 0 70px
-        form
+        .form
             input, label
                 width: 100%
     .cards-container

@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Nunito Sans", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#root {
+  background: #202c37;
+  min-height: 100vh;
+}
+
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    padding: 0 5%;
+  }
+}
+button {
+  border-color: transparent;
+}
+button:focus {
+  border-color: #ffffff;
+  border-style: solid;
+}
+
+hr {
+  visibility: hidden;
+}
+
+li:hover {
+  background: #202c37;
+}
+
+.dark {
+  background: #ffffff !important;
+}
+.dark .moon {
+  fill: #111517 !important;
+}
+.dark .select h3 {
+  background: #ffffff !important;
+}
+.dark header, .dark .main-container, .dark input, .dark label, .dark .icon, .dark button, .dark .tag, .dark .card-box, .dark h2, .dark ul {
+  background: #ffffff !important;
+  color: #111517 !important;
+}
+.dark input {
+  background: transparent !important;
+}
+.dark input:focus {
+  background: #ffffff !important;
+}
+.dark h3, .dark h4, .dark h1, .dark p {
+  color: #111517 !important;
+}
+.dark li {
+  color: black !important;
+}
+.dark li:hover {
+  background: #fafafa !important;
+}
+.dark .card-text-info,
+.dark .country-info-value {
+  color: #858585 !important;
+}/*# sourceMappingURL=style.css.map */

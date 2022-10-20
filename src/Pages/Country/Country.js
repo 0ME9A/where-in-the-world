@@ -63,54 +63,54 @@ const Country = () => {
         cBorders === undefined ? cBorders = [''] : cBorders = countryDetail[0].borders
 
         return (
-            <div className='main-container' id='country'>
-                <div className='histroy-btn'>
+            <main className='main-container' id='country'>
+                <section className='histroy-btn'>
                     <button onClick={() => { navigate('/') }}><BsArrowLeft className='icon' /> Back</button>
-                </div>
-                <article className='country-container'>
+                </section>
+                <section className='country-container'>
                     <figure className='country-flag'>
                         <img src={countryDetail[0].flags.png} alt="Country Flag" />
                     </figure>
-                    <div className='country-info'>
-                        <h3>{countryDetail[0].name.common}</h3>
-                        <div className='country-info-values'>
+                    <article className='country-info'>
+                        <h1>{countryDetail[0].name.common}</h1>
+                        <section className='country-info-values'>
                             <ul>
-                                <li>Native: <span className='country-info-value'>{objLoop(cNativ, 'common')}</span></li>
-                                <li>Population: <span className='country-info-value'>{countryDetail[0].population}</span></li>
-                                <li>Sub Region: <span className='country-info-value'>{countryDetail[0].subregion}</span></li>
-                                <li>Capital: <span className='country-info-value'>{countryDetail[0].capital}</span></li>
+                                <li><strong>Native: </strong>{objLoop(cNativ, 'common')}</li>
+                                <li><strong>Population: </strong>{countryDetail[0].population}</li>
+                                <li><strong>Sub Region: </strong>{countryDetail[0].subregion}</li>
+                                <li><strong>Capital: </strong>{countryDetail[0].capital}</li>
                             </ul>
                             <ul>
-                                <li>Top Level Domain:  <span className='country-info-value'>{countryDetail[0].tld}</span></li>
-                                <li>Currencies: <span className='country-info-value'>{Object.values(cCurren)[0].name}</span></li>
-                                <li>Languages: <span className='country-info-value'>{objLoop(cLang)}</span></li>
+                                <li><strong>Top Level Domain: </strong>{countryDetail[0].tld}</li>
+                                <li><strong>Currencies: </strong>{Object.values(cCurren)[0].name}</li>
+                                <li><strong>Languages: </strong>{objLoop(cLang)}</li>
                             </ul>
-                        </div>
-                        <div className='country-border'>
-                            <h4>Border Countries:</h4>
-                            <div className='tags-container'>
+                        </section>
+                        <footer className='country-border'>
+                            <h2>Border Countries:</h2>
+                            <section className='tags-container' role="tree">
                                 {
                                     cBorders.map((theKey) => {
                                         for (let i = 0; i < CountriesWidthCode.length; i++) {
                                             const element = CountriesWidthCode[i];
                                             if (theKey === element.alpha_3) {
                                                 return (
-                                                    <Link to={'/country/' + element.name} className='tag' key={Math.random() * 5000}>{element.name}</Link>
+                                                    <Link to={'/country/' + element.name} className='tag' key={Math.random() * 5000} role="treeitem">{element.name}</Link>
                                                 )
                                             }
                                         }
                                         if (theKey === '') {
                                             return (
-                                                <span className='tag' key={Math.random() * 5000}>No Border</span>
+                                                <button disabled role="treeitem" className='tag' key={Math.random() * 5000}>No Border</button>
                                             )
                                         }
                                     })
                                 }
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
+                            </section>
+                        </footer>
+                    </article>
+                </section>
+            </main>
         )
     } else {
         return (

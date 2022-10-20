@@ -18,21 +18,22 @@ const Nav = () => {
   };
   return (
     <>
-      <nav>
-        <div className="nav-content">
+      <header role="navigation" id="navigation">
+        <nav className="nav-content">
           <Link to="/" target={"_top"}>
-            <h1>Where in the world?</h1>
+            <h2>Where in the world?</h2>
           </Link>
           <button onClick={setTheme}>
             {moon === 1 ? (
               <RiMoonLine className="moon" />
             ) : (
               <IoMdMoon className="moon" />
-            )}{" "}
+            )}{""}
             Dark Mode
           </button>
-        </div>
-      </nav>
+        </nav>
+      </header>
+      <hr />
       <Outlet />
     </>
   );

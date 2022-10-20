@@ -1,0 +1,20 @@
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+}
+.error-container h1 {
+  font-size: 2rem;
+}
+.error-container p {
+  padding-top: 1rem;
+}
+.error-container p, .error-container h1, .error-container a {
+  color: #fff;
+}
+.error-container a {
+  text-decoration: underline;
+  color: blue;
+}/*# sourceMappingURL=Error.css.map */

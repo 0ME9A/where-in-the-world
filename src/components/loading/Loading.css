@@ -1,0 +1,20 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+}
+.loading h2 {
+  font-size: 1.5rem;
+}
+.loading p {
+  padding-top: 1rem;
+}
+.loading p, .loading h2, .loading a {
+  color: #fff;
+}
+.loading a {
+  text-decoration: underline;
+  color: blue;
+}/*# sourceMappingURL=Loading.css.map */

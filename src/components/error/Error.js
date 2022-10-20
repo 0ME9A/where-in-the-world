@@ -4,12 +4,15 @@ import './Error.sass'
 
 function Error(props) {
     return (
-        <div className='error-container'>
+        <>
+        <section className='error-container'>
             <h1>Error 404</h1>
             <p>
                 Page not found go <Link to="/"> home</Link>
             </p>
-        </div>
+        </section>
+        <hr />
+        </>
     );
 }
 
