@@ -2,17 +2,17 @@ import './Card.sass'
 
 const Cards = (props) => {
     return (
-        <article className="card-box">
+        <div className="card-box">
             <img src={props.cImg} className="card-thumb" alt="Country flag" />
-            <section className='card-text'>
+            <article className='card-text'>
                 <h2>{props.cName}</h2>
                 <ul>
                     <li><strong>Population: </strong>{props.cPopulation}</li>
                     <li><strong>Region: </strong>{props.cRegion}</li>
                     <li><strong>Capital: </strong>{props.cCapital}</li>
                 </ul>
-            </section>
-        </article>
+            </article>
+        </div>
     )
 }
 

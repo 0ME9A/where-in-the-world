@@ -66,7 +66,7 @@ const Home = () => {
                         <label htmlFor="search-input"><GoSearch className="icon" />Search...</label>
                     </div>
 
-                    <section className="select">
+                    <div className="select">
                         <h3>{filter}<IoIosArrowDown /></h3>
                         <ul>
                             <li
@@ -90,7 +90,7 @@ const Home = () => {
                                 Oceania
                             </li>
                         </ul>
-                    </section>
+                    </div>
                 </div>
                 <main className="cards-container">
                     {
