@@ -63,18 +63,18 @@ const Country = () => {
         cBorders === undefined ? cBorders = [''] : cBorders = countryDetail[0].borders
 
         return (
-            <main className='main-container' id='country'>
-                <section className='histroy-btn'>
+            <div className='main-container' id='country'>
+                <div className='histroy-btn'>
                     <button onClick={() => { navigate('/') }}><BsArrowLeft className='icon' /> Back</button>
-                </section>
+                </div>
                 <hr />
-                <section className='country-container'>
+                <div className='country-container'>
                     <figure className='country-flag'>
                         <img src={countryDetail[0].flags.png} alt="Country Flag" />
                     </figure>
                     <article className='country-info'>
                         <h1>{countryDetail[0].name.common}</h1>
-                        <section className='country-info-values'>
+                        <div className='country-info-values'>
                             <ul>
                                 <li><strong>Native: </strong>{objLoop(cNativ, 'common')}</li>
                                 <li><strong>Population: </strong>{countryDetail[0].population}</li>
@@ -86,23 +86,23 @@ const Country = () => {
                                 <li><strong>Currencies: </strong>{Object.values(cCurren)[0].name}</li>
                                 <li><strong>Languages: </strong>{objLoop(cLang)}</li>
                             </ul>
-                        </section>
+                        </div>
                         <footer className='country-border'>
                             <h2>Border Countries:</h2>
-                            <section className='tags-container' role="tree">
+                            <section className='tags-container'>
                                 {
                                     cBorders.map((theKey) => {
                                         for (let i = 0; i < CountriesWidthCode.length; i++) {
                                             const element = CountriesWidthCode[i];
                                             if (theKey === element.alpha_3) {
                                                 return (
-                                                    <Link to={'/country/' + element.name} className='tag' key={Math.random() * 5000} role="treeitem">{element.name}</Link>
+                                                    <Link to={'/country/' + element.name} className='tag' key={Math.random() * 5000}>{element.name}</Link>
                                                 )
                                             }
                                         }
                                         if (theKey === '') {
                                             return (
-                                                <button disabled role="treeitem" className='tag' key={Math.random() * 5000}>No Border</button>
+                                                <button disabled className='tag' key={Math.random() * 5000}>No Border</button>
                                             )
                                         }
                                     })
@@ -110,8 +110,8 @@ const Country = () => {
                             </section>
                         </footer>
                     </article>
-                </section>
-            </main>
+                </div>
+            </div>
         )
     } else {
         return (

@@ -7,13 +7,13 @@ function Loading(props) {
 
     useEffect(()=>{
         setTimeout(() => {
-            setHome(<p>Page not found go <Link to="/" target={"_top"}> home</Link></p>)
+            setHome(<p>Page not found go <Link to="/" aria-label='Home link' target={"_top"}> home</Link></p>)
         }, 10000);
     },[])
 
     return (
         <>
-        <section className='loading' role="progressbar">
+        <section className='loading'>
             <h2>
                 {home}
             </h2>
