@@ -67,6 +67,7 @@ const Country = () => {
                 <section className='histroy-btn'>
                     <button onClick={() => { navigate('/') }}><BsArrowLeft className='icon' /> Back</button>
                 </section>
+                <hr />
                 <section className='country-container'>
                     <figure className='country-flag'>
                         <img src={countryDetail[0].flags.png} alt="Country Flag" />

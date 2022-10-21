@@ -18,7 +18,7 @@ const Nav = () => {
   };
   return (
     <>
-      <header role="navigation" id="navigation">
+      <header role="banner" id="navigation">
         <nav className="nav-content">
           <Link to="/" target={"_top"}>
             <h2>Where in the world?</h2>
