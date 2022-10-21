@@ -1,6 +1,6 @@
 @import ../../variable
-    
-#country    
+
+#country
     padding-bottom: 3rem
     min-height: calc( 100vh - 200px )
     .histroy-btn
@@ -20,12 +20,10 @@
         @include flex(space-between, flex-start )
         width: 100%
         gap: 1rem
-        .country-flag
+        img
             max-width: 555px
             @include element(555px )
-            img
-                @include common()
-                @include element(100%, 100%)
+            @include common()
         .country-info
             @include element(570px, $padding: 0 0 1rem 0 )
             color: $White
@@ -43,14 +41,13 @@
                     padding: 6px 0
                 .country-info-value
                     @include htmlTag( $color: $Very-Light-Gray)
-                    
+
             .country-border
                 display: flex
                 margin-top: 70px
                 h2
                     font-weight: 600
                     text-align: left
-                    width: 180px
                 .tags-container
                     display: flex
                     gap: 10px
@@ -62,17 +59,18 @@
                         font-size: 14px
                         line-height: 26px
 
-
-@media screen and (max-width: 1200px) 
+@media screen and (max-width: 1200px)
     #country
         .country-container
             flex-direction: column
             gap: 70px
             .country-info
-                max-width: 555px
                 width: 100%
+                .country-info-values
+                    max-width: 555px
 
-@media screen and (max-width: 600px) 
+
+@media screen and (max-width: 600px)
     #country
         .histroy-btn
             padding: 30px 0px 70px

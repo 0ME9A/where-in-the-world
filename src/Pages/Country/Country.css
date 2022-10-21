@@ -42,22 +42,16 @@
   width: 100%;
   gap: 1rem;
 }
-#country .country-container .country-flag {
+#country .country-container img {
   max-width: 555px;
   width: 555px;
   height: auto;
   padding: 0;
   background: transparent;
-}
-#country .country-container .country-flag img {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  background: transparent;
 }
-#country .country-container .country-flag img:hover {
+#country .country-container img:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
 #country .country-container .country-info {
@@ -98,7 +92,6 @@
 #country .country-container .country-info .country-border h2 {
   font-weight: 600;
   text-align: left;
-  width: 180px;
 }
 #country .country-container .country-info .country-border .tags-container {
   display: flex;
@@ -126,8 +119,10 @@
     gap: 70px;
   }
   #country .country-container .country-info {
-    max-width: 555px;
     width: 100%;
+  }
+  #country .country-container .country-info .country-info-values {
+    max-width: 555px;
   }
 }
 @media screen and (max-width: 600px) {

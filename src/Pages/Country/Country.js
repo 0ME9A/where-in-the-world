@@ -69,9 +69,9 @@ const Country = () => {
                 </div>
                 <hr />
                 <div className='country-container'>
-                    <figure className='country-flag'>
-                        <img src={countryDetail[0].flags.png} alt="Country Flag" />
-                    </figure>
+                    {/* <figure className='country-flag'> */}
+                    <img src={countryDetail[0].flags.png} alt="Country Flag" />
+                    {/* </figure> */}
                     <article className='country-info'>
                         <h1>{countryDetail[0].name.common}</h1>
                         <div className='country-info-values'>
