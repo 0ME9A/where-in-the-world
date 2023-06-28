@@ -1,8 +1,8 @@
-import "./Nav.sass";
-import { IoMdMoon } from "react-icons/io";
-import { RiMoonLine } from "react-icons/ri";
-import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { RiMoonLine } from "react-icons/ri";
+import { IoMdMoon } from "react-icons/io";
+import { useState } from "react";
+import "./Nav.sass";
 
 const Nav = () => {
   let [moon, setMoon] = useState(1);
@@ -23,10 +23,10 @@ const Nav = () => {
     <>
       <header id="navigation">
         <nav className="nav-content">
-          <Link to="/" target={"_top"}>
+          <Link to="/" title="Where in the world?">
             <h2>Where in the world?</h2>
           </Link>
-          <button aria-label={"Theme switch "+ currentTheme}  onClick={setTheme}>
+          <button aria-label={"Theme switch " + currentTheme} onClick={setTheme}>
             {moon === 1 ? (
               <RiMoonLine className="moon" />
             ) : (
