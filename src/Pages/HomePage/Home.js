@@ -1,151 +1,125 @@
-import Cards from "../../components/cards/Card"
-import './Home.sass'
-import { GoSearch } from 'react-icons/go'
-import { IoIosArrowDown } from 'react-icons/io'
-import { useEffect, useState, useTransition } from "react"
-import { Link } from "react-router-dom"
-import Loading from "../../components/loading/Loading"
+import { useEffect, useState } from "react";
+import { IoIosArrowDown } from 'react-icons/io';
+import { GoSearch } from 'react-icons/go';
+import Loading from "../../components/loading/Loading";
+import Cards from "../../components/cards/Card";
+import './Home.sass';
 
+const filterList = [
+    { name: "All" },
+    { name: "Africa" },
+    { name: "Americas" },
+    { name: "Antarctic" },
+    { name: "Asia" },
+    { name: "Europe" },
+    { name: "Oceania" },
+];
 
 const Home = () => {
-    const [filter, setFilter] = useState('Filter by Region')
-    const [search, setSearch] = useState('')
-    const [coun, setCoun] = useState([])
-    const [apiStatus, setApiStatus] = useState(404)
-    const [isPending, startTransition] = useTransition()
+    const [filterByRegion, setFilterByRegion] = useState('');
+    const [filterBySearch, setFilterBySearch] = useState('');
+    const [countries, setCountries] = useState([]);
+    const [apiStatus, setApiStatus] = useState(404);
+    const [apiData, setApiData] = useState([]);
+    const [noRecord, setNoRecord] = useState(false);
+
+    const getCountry = async () => {
+        try {
+            const fetchData = await fetch('https://restcountries.com/v3.1/all');
+            const res = await fetchData.json();
+            setApiData(res);
+            setApiStatus(200);
+        } catch (error) {
+            console.log('Error:', error);
+        }
+    };
+
+    const handleFilterByRegion = (region) => {
+        region === "All" ? setFilterByRegion('') : setFilterByRegion(region)
+    };
+    const handleFilterBySearch = (e) => {
+        setFilterBySearch(e.target.value);
+    };
 
 
-    const getCountry = async (bySearch = '', byFilter = '') => {
-        let urls;
-        if (bySearch !== '' && byFilter === '') {
-            urls = 'https://restcountries.com/v3.1/name/' + bySearch
-        }
-        else if (byFilter !== '' && bySearch === '') {
-            urls = 'https://restcountries.com/v3.1/region/' + byFilter
-        }
-        else {
-            urls = 'https://restcountries.com/v3.1/all'
-        }
-        const response = await fetch(urls);
-        if (response.status === 200) {
-            const finalResponse = await response.json()
-            setCoun(finalResponse)
-            setApiStatus(200)
-        }
-        else {
-            setApiStatus(404)
-        }
-        console.log("getcont")
-    }
-    const chese = (e) => {
-        setSearch(e.target.value)
-        setTimeout(() => {
-            startTransition(() => {
-                getCountry(e.target.value)
-            })
-        }, 1000);
-        console.log("chese")
-    }
-    const filterByRegion = (region = '') => {
-        setFilter(region)
-        getCountry('', region)
-        console.log('filtbyr')
-    }
     useEffect(() => {
-        getCountry()
-        console.log('eff')
-    }, [])
+        if (filterBySearch && filterByRegion) {
+            const filterCountries = apiData.filter(item => {
+                const countriesName = item.name.common.toLowerCase()
+                return countriesName.includes(filterBySearch) && (!filterByRegion ? item : item.region === filterByRegion);
+            })
+            setCountries(filterCountries);
+        } else if (filterBySearch && !filterByRegion) {
+            const filterCountries = apiData.filter(item => {
+                const countriesName = item.name.common.toLowerCase()
+                return countriesName.includes(filterBySearch)
+            })
+            setCountries(filterCountries);
+        } else if (!filterBySearch && filterByRegion) {
+            const filterCountries = apiData.filter(item => {
+                return !filterByRegion ? item : item.region === filterByRegion;
+            });
+            setCountries(filterCountries);
+        } else {
+            setCountries(apiData);
+        }
+    }, [apiData, filterByRegion, filterBySearch]);
 
 
-    if (apiStatus === 200) {
-        return (
-            <div className="main-container">
-                <div className="filter-container">
-                    <div className="form" role="search" aria-label="search country">
-                        <input type='search' value={search} role="searchbox" onChange={chese} name="Country" id="search-input" />
-                        <label htmlFor="search-input"><GoSearch className="icon" />Search...</label>
-                    </div>
+    useEffect(() => {
+        getCountry();
+        document.title = "Where in the world?";
+    }, []);
 
-                    <div className="select">
-                        <h3>{filter}<IoIosArrowDown /></h3>
-                        <ul>
-                            <li
-                                onClick={() => { filterByRegion('Africa') }}>
-                                Africa
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('America') }}>
-                                America
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('Asia') }}>
-                                Asia
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('Europe') }}>
-                                Europe
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('Oceania') }}>
-                                Oceania
-                            </li>
-                        </ul>
-                    </div>
+    return (
+        <div className="main-container">
+            <div className="filter-container">
+                <div className="form" role="search" aria-label="search country">
+                    <input
+                        type="search"
+                        value={filterBySearch}
+                        role="searchbox"
+                        name="Country"
+                        id="search-input"
+                        onChange={handleFilterBySearch}
+                    />
+                    <label htmlFor="search-input">
+                        <GoSearch className="icon" />
+                        Search...
+                    </label>
                 </div>
-                <main className="cards-container">
-                    {
-                        coun.map((cList) => {
-                            return (
-                                <Link to={'/country/' + cList.name.common} target="_top" key={Math.random() * 50000}>
-                                    <Cards cName={cList.name.common} cImg={cList.flags.png} cRegion={cList.region} cCapital={cList.capital} cPopulation={cList.population} />
-                                </Link>
-                            )
-                        })
+                <div className="select">
+                    <h3>{!filterByRegion ? "Filter by region" : filterByRegion}<IoIosArrowDown /></h3>
+                    <ul>
+                        {filterList.map(item => (
+                            <li
+                                title={item.name}
+                                key={item.name}
+                                onClick={() => handleFilterByRegion(item.name)}
+                            >
+                                {item.name}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <main className="cards-container">
+                {apiStatus === 200 ?
+                    countries.map((item) => {
+                        return (
+                            <Cards
+                                cName={item.name.common}
+                                cImg={item.flags.png}
+                                cRegion={item.region}
+                                cCapital={item.capital}
+                                cPopulation={item.population}
+                                key={item.cca3}
+                            />)
                     }
-                </main>
-            </div>
-        )
-    }
-    else {
-        return (
-            <div className="main-container">
-                <div className="filter-container">
-                    <div className="form" role="search">
-                        <input type='text' value={search} role="searchbox" onChange={chese} name="Country" id="search-input" />
-                        <label htmlFor="search-input" ><GoSearch className="icon" />Search...</label>
-                    </div>
-
-                    <section className="select">
-                        <h3>{filter}<IoIosArrowDown /></h3>
-                        <ul>
-                            <li
-                                onClick={() => { filterByRegion('Africa') }}>
-                                Africa
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('America') }}>
-                                America
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('Asia') }}>
-                                Asia
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('Europe') }}>
-                                Europe
-                            </li>
-                            <li
-                                onClick={() => { filterByRegion('Oceania') }}>
-                                Oceania
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-                <Loading/>
-            </div>
-        )
-
-    }
+                    ) : <Loading />}
+            </main>
+        </div>
+    );
 }
 
-export default Home
+export default Home;
